@@ -1,0 +1,101 @@
+package myextendPackage;
+
+  class customerInfo{                  //Access Modifiers
+
+      public String name;
+      private String title;
+      protected String position;
+
+      public String getTitle(){
+          return this.title;
+      }
+      public String setTitle(String title){
+         this.title = title;
+         return title;
+      }
+
+}
+public class myInfo {
+    public static void main(String[] args){
+        customerInfo n1 = new customerInfo();
+        n1.name ="Ashish";
+        n1.position = "Software Engineer";
+        n1.setTitle("Bekaar ha bhaiya");
+        System.out.println(n1.getTitle());
+    }
+}
+
+
+
+
+
+import java.util.*;           //Abstraction
+
+  abstract class shape {
+      abstract void notSleeping();
+      shape(){
+          System.out.println("Here constructor is called");
+      }
+    public void sleeps(){
+          System.out.println("He is sleeping");
+      }
+  }
+
+  class Triangle extends shape{
+      public void notSleeping(){
+          System.out.println("Now he is not sleeping");
+      }
+
+  }
+
+  class equilateralTriangle extends Triangle{
+      public void awakeHe(){
+          System.out.println("He is awake again");
+      }
+  }
+
+  public class FirstClass {
+      public static void main(String[] args){
+        Triangle n1 = new Triangle();
+        n1.notSleeping();
+        n1.sleeps();
+      }
+}
+
+
+
+
+
+
+
+
+
+
+                                            //Interfaces
+
+
+interface FirstInterface {
+    public void myMethod(); // interface method
+}
+
+interface SecondInterface {
+    public void myOtherMethod(); // interface method
+}
+
+// DemoClass "implements" FirstInterface and SecondInterface
+class DemoClass implements FirstInterface, SecondInterface {
+    public void myMethod() {
+        System.out.println("Some text..");
+    }
+    public void myOtherMethod() {
+        System.out.println("Some other text...");
+    }
+}
+
+public class FirstClass {
+    public static void main(String[] args) {
+        DemoClass myObj = new DemoClass();
+        myObj.myMethod();
+        myObj.myOtherMethod();
+    }
+}
